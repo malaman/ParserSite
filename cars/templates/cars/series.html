@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<p> Select series for {{ car_mark_name }}</p>
+ <select name = "series_id">
+     {% for series in all_series %}
+         <option value = "{{ series.id  }}"> {{ series.name }} </option>
+     {% endfor %}
+ </select>
+
+<input type="submit" value="Select">
+
+
+</body>
+</html>

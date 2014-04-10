@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+{{ object_list }}
+
+
+<H1>Car series for {{ object.name }} mark</H1>
+
+{% for series in object.carseries_set.all %}
+    <li>
+{#        <a href="{% url 'search-view' mark_id=object.id series_id=series.id %}">{{ series.name }}</a>#}
+    </li>
+{% endfor %}
+
+
+
+</body>
+</html>

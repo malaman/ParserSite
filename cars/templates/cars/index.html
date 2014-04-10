@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<form action = "series" method="get">
+<p><strong> Select Mark</strong></p>
+{% if all_marks %}
+    <select name = "mark_id">
+    <option  value = "0"> Any </option>
+    {% for mark in all_marks %}
+        {% if mark.id == mark_id %}
+            <option value = "{{ mark.id  }}"> {{ mark.name }} </option>
+        {% else %}
+            <option value = "{{ mark.id  }}"> {{ mark.name }} </option>
+        {% endif %}
+    {% endfor %}
+     </select>
+{% endif %}
+    <input type="submit" value="Select">
+</form>
+
+
+</body>
+</html>

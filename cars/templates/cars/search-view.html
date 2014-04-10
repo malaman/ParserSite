@@ -1,0 +1,43 @@
+{% extends "cars/base.html" %}
+
+{% block content %}
+    <script>
+    $(document).ready(function(){
+        $("#id_series").val({{ series_id }})
+    })
+    </script>
+
+<form action= "{% url "search-view" %}" method="GET">
+    {{ form.as_ul }}
+<input id="search_car" type="submit" value="Search" />
+</form>
+
+{% if  mark  %}
+    <H2> Prices for {{ mark }} {{ series }}</H2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>City</th>
+    <th>Price</th>
+    <th>Fuel</th>
+    <th>Race</th>
+    <th>URL</th>
+
+  </tr>
+{%  for i in search_results %}
+    <tr>
+        <td> {{ i.name }} </td>
+        <td> {{ i.city }} </td>
+        <td> {{ i.price }} </td>
+        <td> {{ i.fuel }} </td>
+        <td> {{ i.race }} </td>
+        <td> <a href = "{{ i.url }}"> URL </a> </td>
+
+
+    </tr>
+{% endfor %}
+</table>
+{% endif %}
+
+
+{% endblock content %}
