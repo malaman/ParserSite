@@ -10,14 +10,16 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
+from .secret import *
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '=uiu$29-*bcrm8k!l!kw6e9l+vmbt-tc_#0jb-9!0zm9q%ew52'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -60,9 +62,9 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE':'django.db.backends.postgresql_psycopg2',
-        'NAME': 'djangobase',
-        'USER': 'dbuser',
-        'PASSWORD': 'BangBig',
+        'NAME': DB_NAME,
+        'USER': DB_USER,
+        'PASSWORD': DB_PSW,
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
